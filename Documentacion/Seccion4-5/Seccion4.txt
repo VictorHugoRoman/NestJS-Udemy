@@ -1,0 +1,23 @@
+REST API, Tareas
+    En esta seccion comenzaremos a usar el "DTO de Tarea" en nuestros controllers.
+    Estaremos usando el decorador @Body param visto en la seccion anterior para enviar la informacion a los controllers.
+
+Nota: tenia problemas con eslintrc.js en cuestion de ruta, le meti esta linea de codigo  "tsconfigRootDir: __dirname" en el objeto "parserOptions"
+    De forma predeterminada, los projects (in parserOptions) se resuelven en relación con el directorio de trabajo actual. 
+    Si ejecuta eslinten un directorio de trabajo diferente al de la carpeta que contiene tsconfig.json, @ typescript-eslint / parser no podrá ubicar el archivo.
+    
+1 Crear service Crear tareas. Crear un controller para crear una tarea ir a "task.controller.ts" llamarlo "createTask".
+    1.1 Crear el metodo en el servicio tambien ir a "task.service.ts" llamarlo "createTask"
+    ir al archivo para ver detalles.
+    1.2 Instalar la libreria uuid, para generar idUnico para cada tarea (Task) creada.
+        "yarn add uuid"
+    1.3 Agregar "TaskService" en app.Module, como lo agregue manualmente nest no lo puso
+2 Crear service Obtener Tareas por Id. Crear un controller para obtener tareas ir a "task.controller.ts" llamarlo "getTasks".
+    2.1 Crear el servicio tambien ir a "task.service.ts" llamarlo "getTasks".
+3 Crear service Obtener Tareas. Crear un controller para obtener una tarea por id, ir a "task.controller.ts" llamarlo "getTasks".
+    3.1 Crear el servicio tambien, ir a "task.service.ts" llamarlo "getTasks"
+    3.2 Agregar el campo id como opcional en la interfaz ITask para buscar por este campo
+4 Crear service actualizar tarea. Crear un controller para actualizar una tarea por id, ir a "task.controller.ts" llamarlo "updateTaskById".
+    4.1 Crear el servicio tambien, ir a "task.service.ts" llamarlo "updateTaskById"
+5 Crear service eliminar tarea. Crear un controller para eliminar una tarea por id, ir a "task.controller.ts" llamarlo "deleteTaskById".
+    5.1 Crear el servicio tambien, ir a "task.service.ts" llamarlo "deleteTaskById"

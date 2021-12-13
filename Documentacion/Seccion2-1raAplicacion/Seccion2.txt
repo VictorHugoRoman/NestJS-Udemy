@@ -1,0 +1,71 @@
+PRIMERA APLICACION CON NestJs
+
+## Video 1 ## Creacion de proyecto con nest CLI
+    1 Instalar NestJs CLI, instala el comando nest
+        npm i -g @nestjs/cli
+    2  Crear apliacion "api-tasks" de NestJs
+        nest new project-name
+
+## Video 2 ## Contenido de la aplicacion
+        Los sig archivos y directorios fueron generados por el comando "nest new api-tasks".
+    1 Archivo ".eslintrc.js" --> herramienta para el analisis de codigo estatico, n la propiedad "parser" le ponemos el lenguaje a analizar,
+    en la propiedad "plugins" van los plugins q contienen las reglas a usar para el lenguaje.
+    2 Carpeta "dist" --> es l dir por default n la cual Nest genera el compilado.
+    3 Carpeta "DS_Store" --> para archivos en mac
+    4 Archivo ".prettierrc" --> para el formato de nuestro codigo
+    5 Archivo "tsconfig.json" --> configuracion para el compilado de typescript
+    6 Archivo "tsconfig.build.json" --> toma la configuracion del archivo "tsconfig.json" para hacer el build.
+    7 Archivo "src > main.ts" --> Levanta nuestro servidor
+    8 Archivo "src > app.module.ts" --> archivo de configuracion central donde se realizan las importaciones, se colocan controladores, servicios.
+        Es consumido por el "src > main.ts".
+    9 Archivo "src > app.controller.ts" --> es llamado por "app.module" consume los metodos del servicio "app.service" mediante inyeccion de 
+        dependencias en el constructor
+    10 Archivo "src > app.service.ts" --> es llamado por app.module y el "app.controller" contiene el decorador "Injectable()" de nest
+        ya q es llamado por el controlador.
+
+## Video 3 ## Comandos Basicos de NestJs
+        Comandos del script del package.json, A continuacion mencionamos los mas comunes
+    1 "build" : con st nest internamente ejecuta primero el comando o script "prebuild" ya q st elimina la carpeta dist si existe, despues despliega
+        el compilado de nuestra apliacion en la carpeta dist.
+    2 "start:prod" : ejecuta el compilado, es decir despues de ejecutar el comando "build". ejecuta el archivo main.js de la carpeta dist.
+    3 "start" : simplemente ejecuta la apliacion sin dependencias de desarrollo. c ejecuta d la sig manera "npm start"
+    4 "start:dev" : ejecuta la aplicacion con las dependencias de desarrollo, ejecuta el hot reloading, se ejecuta de la sig maner "npm run start:dev"
+
+## Video 4 ## Crear controladores
+        Usando los comando de Nest CLI
+    1 con el comando "nest --help" podemos ver un preview d los comandos disponibles del CLI
+    2 generamos el controller con el comando "nest g co task".
+        "nest": CLI
+        "g": generate
+        "co": controller
+        "task": nombre  del modulo, st nombre lo tendra la carpeta si ya existe agrega los archivos necesarios 
+        ST comando genera una carpeta llamada "task" dentro de "src", y dentro de ella genera un archivo de pruebas(.spec) y l dl controller,
+        Nos vamos al archivo del controlador.
+        ST comando tambien editó nuestro archivo "app.module.ts" agregando nuestro controlador en "controllers".
+
+## Video 5 ## Configuracion de modulo
+        vamos a crear un modulo para poder manejar nuestro modulo d la apliacion de tasks independiente a nuestro app.modulo
+        debido a q si nuestra aplicacion crece si tuvieramos varios modulos seria casi imposible estar importando o visualizando los 
+        controladores y/o servicios por cada uno de nuestras aplicaciones q tuvieramos.
+    1 generamos el modulo con el comando "nest g mo task"
+        "nest": CLI
+        "g": generate
+        "mo": module
+        "task": nombre del modulo, st nombre lo tendra la carpeta si ya existe agrega los archivos necesarios.
+        ST comando generó el archivo "app.module.ts" dentro d la carpeta "src>task", este app.modulo expone nuestros controladores en la aplicacion de nest.
+
+    2 generamos el servicio con el comando "nest s mo task"
+        "nest": CLI
+        "g": generate
+        "s": service
+        "task": nombre del modulo, st nombre lo tendra la carpeta si ya existe agrega los archivos necesarios.
+        ST comando generó el archivo "task.service.ts" y "task.service.spec.ts" dentro d la carpeta "src>task".    
+
+    ***Importante: para facilitarnos l trabajos primero creamos el "app.module" y despues el "controller" y el "service" ya q el CLI de nest
+        los agrega automaticamente al "app.module".
+
+    3 Irnos al "app.module" de "task" y lo editamos para exportar nuestro servicio y controlador.
+    4 Crear los datos para usar la aplicacion.
+        adentro del directorio o modulo "task" crear la carpeta "dto" y dentro de esta crear el archivo "task.dto.ts" y creamos la clase "TaskDTO".
+        adentro del directorio o modulo "task" crear el archivo "task.interface.ts" y creamos la interface "TaskDTO".
+    5 Hasta aqui ya tenemos la configuracion de nuestro modulo "task" con su service, controlador, dto, interface.

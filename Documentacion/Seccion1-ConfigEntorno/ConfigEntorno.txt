@@ -1,0 +1,6 @@
+--Herramientas para windows
+    Instalacion de chocolatey.
+    Instalacion de Postman desde chocolatey.
+    Instalacion de Mongodb y Compass desde chocolatey ambos.
+    Instalacion de NodeJs desde chocolatey.
+    Instalacion de Docker desde chocolatey.

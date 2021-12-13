@@ -1,0 +1,58 @@
+VALIDACION DE ENTRADA
+    En esta seccion vamos a ver como validar los datos del requeste, vamos a enviar desde postman en nuestro caso, validar la 
+    entrada para poder realizar el proceso que deseamos.
+    
+1 Instalar los paquetes "class-validator" y "class-transformer"
+    npm i class-validator class-transformer.
+2 Validar los datos de entrada en el controller createTask
+    usaremos el decorador @UsePipes() y la clase ValidationPipe q son de NestJs
+3 Validar los datos en los DTO, agregamos los decoradores de los paquetes recien instalados,"class-validator" y "class-transformer".
+    @IsNotEmpty, @IsString, @IsBoolean.
+4 En el pasos 2 validamos los datos exclusivamente en un metodo usando la configuracion del paso 3, Ahora vamos a ver como hacer una configuracion
+    global para todos los metodos.
+5 Ir al main.ts y configurar el useGLobalPipes();
+
+
+class-validator: Permite el uso de validaciones basadas en decoradores y no decoradores. 
+    Utiliza internamente validator.js para realizar la validación. El validador de clases funciona tanto en el navegador como en las plataformas node.js.
+class-transformer: 
+    En JavaScript hay dos tipos de objetos: planos (literales), objetos de clase (constructor)
+        Los objetos simples son objetos que son instancias de la clase Object. A veces se les llama objetos literales, 
+        cuando se crean mediante notación {}. Los objetos de clase son instancias de clases con un constructor, propiedades y métodos propios definidos. Por lo general, los define mediante la notación de clase.
+    ¿Entonces, cuál es el problema?
+    A veces desea transformar un objeto javascript simple en las clases ES6 que tiene. Por ejemplo, 
+    si está cargando un json desde su backend, alguna api o desde un archivo json, y después de JSON.parse, tiene un objeto javascript simple, no una instancia de la clase que tiene.
+    Por ejemplo, tiene una lista de usuarios en su users.json que está cargando:
+    [
+        {
+          "id": 1,
+          "firstName": "Johny",
+          "lastName": "Cage",
+          "age": 27
+        },
+        {
+          "id": 2,
+          "firstName": "Ismoil",
+          "lastName": "Somoni",
+          "age": 50
+        },
+        {
+          "id": 3,
+          "firstName": "Luke",
+          "lastName": "Dacascos",
+          "age": 12
+        }
+    ]
+    And you have a User class:
+    export class User {
+      id: number;
+      firstName: string;
+      lastName: string;
+      age: number;
+      getName() {
+        return this.firstName + ' ' + this.lastName;
+      }
+      isAdult() {
+        return this.age > 36 && this.age < 60;
+      }
+    }

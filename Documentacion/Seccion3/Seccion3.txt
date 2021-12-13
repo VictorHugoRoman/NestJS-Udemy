@@ -1,0 +1,26 @@
+DECORADORES DE CONTROLADOR
+    seguimos configurando la aplicacion "api-tasks" creada en la seccion anterior, crearemos los metodos de acceso a los controladores,
+    q vienen siendo los verbos http get, put, delete, etc.
+
+1 Crear un metodo POST ir a task.controller.ts llamarlo "methodPost".
+    ir al archivo para ver detalles.
+2 Crear una variable de entorno llamada "endpoint" en PostMan con la direccion del proyecto "localhost:3000".
+3 Crear un metodo http de tipo GET ir a task.controller.ts llamarlo "methodGet".
+    ir al archivo para ver detalles.
+4 Crear un metodo http de tipo PUT ir a task.controller.ts llamarlo "methodPut".
+    ir al archivo para ver detalles.
+5 Crear un metodo http de tipo Patch ir a task.controller.ts llamarlo "methodPatch".
+    ir al archivo para ver detalles.
+6 Crear un metodo http de tipo Delete ir a task.controller.ts llamarlo "methodDelete".
+    ir al archivo para ver detalles.
+7 Trabajando con decorador @Param, este decorador nos permite trabajar con parametros por medio de la url.
+    Crear un metodo http de tipo Post ir a task.controller.ts llamarlo "methodPostParam_1". 
+    url= localhost:9090/api/v1/task/12 . donde 12 es el valor del parametro. nest sabe q es un parametro ya q n l decorador "Controller('api/v1/task')" 
+    esta definida la url completa y en el decorador @Post(':id') no agregamos mas ruta poniendo solo el parametro o el nombre de la variable q sera el parametro.
+8 Trabajando con decorador @Query, este decorador nos permite trabajar con parametros por medio de la url.
+    Crear un metodo http de tipo Post ir a task.controller.ts llamarlo "methodPostQueryParam_1". 
+9 Trabajando con decorador @Body, este decorador nos permite enviar parametros al controlador por medio de un json y no por la url, se 
+  envia por el request en la propiedad Body.
+    Crear un metodo http de tipo Post ir a task.controller.ts llamarlo "methodPostQueryParam_1". 
+
+    

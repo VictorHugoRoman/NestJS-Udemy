@@ -1,0 +1,54 @@
+** Conceptos q se abordan en el curso **
+
+Nest (NestJS) es un marco para crear aplicaciones del lado del servidor Node.js escalables y eficientes. 
+Utiliza JavaScript progresivo, está construido y es totalmente compatible con TypeScript (pero aún permite a 
+los desarrolladores codificar en JavaScript puro) y combina elementos de POO (Programación orientada a objetos), 
+FP (Programación funcional) y FRP (Programación reactiva funcional). 
+
+Nest hace uso de robustos marcos de servidores HTTP como Express (el predeterminado) y, opcionalmente, 
+    se puede configurar para usar Fastify también. 
+
+Nest proporciona un nivel de abstracción por encima de estos marcos comunes de Node.js (Express / Fastify),
+    pero también expone sus API directamente al desarrollador. Esto les da a los desarrolladores la libertad 
+    de usar la gran cantidad de módulos de terceros que están disponibles para la plataforma subyacente. 
+
+En los últimos años, gracias a Node.js, JavaScript se ha convertido en un lenguaje muy popular tanto para aplicaciones 
+de Frontend como Backend. Esto ha dado lugar a proyectos asombrosos como Angular, React y Vue, que mejoran la productividad 
+de los desarrolladores y permiten la creación de aplicaciones frontend rápidas, probables y extensibles. Sin embargo, 
+aunque existen muchas bibliotecas, ayudantes y herramientas excelentes para Node (y JavaScript del lado del servidor), 
+NINUGO de ellos RESUELVE EFICAZMENTE el problema principal de la ARQUITECTURA. 
+
+Nest proporciona una arquitectura de aplicaciones lista para usar que permite a los desarrolladores y equipos crear aplicaciones 
+    altamente probables, escalables, poco acopladas y fáciles de mantener. La arquitectura está fuertemente inspirada en Angular. 
+ 
+Microservicios: Son un enfoque arquitectónico y organizativo para el desarrollo de software donde el software está compuesto 
+    por pequeños servicios independientes que se comunican a través de API bien definidas. Los propietarios de estos servicios 
+    son equipos pequeños independientes. Las arquitecturas de microservicios hacen que las aplicaciones sean más fáciles de escalar 
+    y más rápidas de desarrollar. Esto permite la innovación y acelera el tiempo de comercialización de las nuevas características.  
+
+RabbitMQ: Es un software de negociación de mensajes de código abierto que funciona como un middleware de mensajería. 
+    Implementa el estándar Advanced Message Queuing Protocol.  Queuing(encolamiento)
+ 
+AMQP: Es un protocolo de estándar abierto en la capa de aplicaciones de un sistema de comunicación. 
+    Las características que definen al protocolo AMQP son la orientación a mensajes, encolamiento, enrutamiento, exactitud y seguridad. 
+
+Swagger: Es un conjunto de herramientas de software de código abierto para diseñar, construir, documentar, y utilizar servicios web RESTful. 
+    Fue desarrollado por SmartBear Software e incluye documentación automatizada, generación de código, y generación de casos de prueba. 
+ 
+Docker: Es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, 
+    proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.  
+
+Docker Compose: Es una herramienta que nos permite ejecutar múltiples contenedores intercomunicados de forma sencilla, 
+    haciendo uso de manifiestos, en este caso en formato YAML. 
+ 
+JWT: es un estándar abierto basado en JSON propuesto por IETF para la creación de tokens de acceso que permiten la propagación de identidad 
+    y privilegios para poder acceder a rutas protegidas por medio de un Token. 
+ 
+MongoDB: Es un sistema de base de datos NoSQL, orientado a documentos y de código abierto. En lugar de guardar los datos en tablas, 
+    tal y como se hace en las bases de datos relacionales, MongoDB guarda estructuras de datos BSON (una especificación similar a JSON) 
+    con un esquema dinámico, haciendo que la integración de los datos en ciertas aplicaciones sea más fácil y rápida. 
+
+Mongoose: Es un Object Document Mapper (ODM). Esto significa que Mongoose le permite definir objetos con un esquema fuertemente tipado 
+    que se asigna a un documento MongoDB. 
+
+ 
