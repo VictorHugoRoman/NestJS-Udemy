@@ -1,0 +1,11 @@
+EXCEPCIONES
+  Veremos las excepciones y como manejarlas de forma global 
+
+1 Ir a la clase TaskController y crear un metodo como el de createTask pero con excepciones, veremos unas maneras 
+  de manjear excepciones por metodos.
+    nombrarlo createTask_Excepcion
+2 Crear excepciones globales para no manejar try catch n c/u d nuestras peticiones.
+  crear carpeta "common" y "filters" adentro de "src". adentro de "filters" crear archivo "http-exception.filters.ts".
+3 Una vez terminada la programacion de excepciones irnos al "main.ts" para configurar la clase excepcion que recien creamos d manera global.
+  usaremos useGlobalFilters();
+  con esto configuramos globalmente nuestro filtro de excepciones para cacharlas en todas las request y mostrar al usuario el mensaje de error

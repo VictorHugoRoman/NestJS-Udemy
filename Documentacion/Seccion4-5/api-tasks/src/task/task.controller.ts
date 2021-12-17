@@ -24,6 +24,23 @@ export class TaskController {
   createTask(@Body() taskDTO: TaskDTO) {
     return this.taskService.createTask(taskDTO);
   }
+  @Post()
+  @UsePipes(new ValidationPipe())
+  createTask_Excepcion(@Body() taskDTO: TaskDTO) {
+    
+    //retorna un objeto con los campos code 400, el msg "Error en Peticion" y error "Bad Request" 
+    //throw new BadRequestException('Error en Peticion');
+    
+    //retorna el code 400 y el mensaje "Error en peticion", estos throw se usan en los try catch
+    //throw new HttpException('Error en peticion', HttpStatus.BAD_REQUEST);
+
+    //la sig promesa retorna un "error internal server" code 500 pero deberia retornar el mensaje "Error en Peticion"
+    //Sin embargo Nest lo intercepta con ExceptionsHandler pero lo muestra en consola
+    return new Promise((resolve, reject) => {
+      setTimeout(() => reject('Error en Peticion'), 2000);
+    });
+    // return this.taskService.createTask(taskDTO);
+  }
 
   @Get()
   getTasks() {

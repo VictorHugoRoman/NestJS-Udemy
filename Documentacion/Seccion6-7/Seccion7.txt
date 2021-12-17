@@ -1,0 +1,17 @@
+INTERCEPTORES
+ Los interceptores tienen un conjunto de capacidades útiles que están inspiradas en la técnica de Programación Orientada a Aspectos (AOP). Permiten: 
+ enlazar lógica adicional antes/después de la ejecución del método.
+ transformar el resultado devuelto por una función.
+ transformar la excepción lanzada desde una función.
+ ampliar el comportamiento de la función básica.
+ anular completamente una función en función de condiciones específicas (por ejemplo, con fines de almacenamiento en caché).
+
+ ***Vamos a simular q una peticion esta tardando mas de lo normal para simplemente lanzar un error.
+		Vamos a interceptar el tiempo de ejecucion para dar una respuesta si no la hay.
+
+1 Ir al controller "task.controller" y crear el metodo createTaskInterceptors();
+	vamos a simular un tiempo de respuesta.
+2 Ir a la carpeta "common" y crear una con l nombre "interceptors" y crear el archivo timeout.interceptor.ts
+	vamos a crear nuestro interceptor.
+3 Agregar nuestro interceptor de manera global, ir al "main.ts". d esta forma todas nuestras rutas tendran el interceptor de timeout,
+	significa q tendran un tiempo de espera configurada n l interceptor para dar una repuesta
