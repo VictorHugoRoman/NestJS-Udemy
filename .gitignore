@@ -1,5 +1,7 @@
 node_modules
 dist
+.vs
+vs
 
 # local env files
 # .env.local

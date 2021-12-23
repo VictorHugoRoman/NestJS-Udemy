@@ -8,3 +8,7 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
+
+//ValidationPipe() hace uso de la clase "class-validator" y sus decoradores de validación declarativa, Ofrece un método conveniente para hacer cumplir 
+    //las reglas de validación para todas las ENTRADAS del cliente , 
+    //donde las reglas específicas se declaran con anotaciones simples en cada clase(DTO) local de declaraciones en cada módulo.
