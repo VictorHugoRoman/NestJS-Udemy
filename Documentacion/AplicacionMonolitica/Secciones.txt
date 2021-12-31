@@ -53,9 +53,13 @@
 		en el imports usamos MongooseModule.forFeatureAsyncen q importara user.schema.ts
 
 	Crear endPoint para crear Usuarios
-	1 ir al controlador de "user.controller.ts", le configuramos la url 'api/v1/user'
-	2 crear el metodo "create" de tipo Post, recibira como parametro el usuario
-	3 crear el servicio "create", recibira como parametro el usuario
-	4 instalar la libreria bcrypt para encriptar el password
+	1 ir al controlador de "user.controller.ts", le configuramos la url 'api/v1/user' con el decorador @Controller
+	2 instalar la libreria bcrypt para encriptar el password
 		yarn add bcrypt
-		4.1 Crear el metodo "hashPassword()" para encriptar o hashear la contraseña.
+		2.1 ir a "user.service.ts" Crear el metodo "hashPassword()" para encriptar o hashear la contraseña.
+	3 crear el metodo "create" de tipo Post en "user.controller", recibira como parametro el usuario
+	4 crear el servicio "create en "user.service.ts", recibira como parametro el usuario
+	5 en el "app.module" le quite el sig objeto de configuracion a la conexion de mongoDB en el import "MongooseModule.forRoot"
+		{createIndex:true, finAndModify:false}
+		ya q no dejaba conectarme
+		
