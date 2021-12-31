@@ -7,10 +7,10 @@ import { UserSchema } from './schema/user.schema';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-    imports: [
+    imports: [ 
         MongooseModule.forFeatureAsync([ //registra hooks antes del registro del modelo, c tiene q usar un proveedor de fábrica o (useFactory) hay de terceros en s t caso usamos d nest
             {
-                name: USER.name,
+                name: USER.name, //
                 imports: [ConfigModule],
                 useFactory: () => {
                     //podemos hacer hookconst schema = UserSchema; 
@@ -26,4 +26,5 @@ import { ConfigModule } from '@nestjs/config';
 })
 export class UserModule { }
 
-//MongooseModule.forFeatureAsync
+//MongooseModule.forFeatureAsync n s t caso hacemos referencia al schema de user q con sta configuracion podremos inyectar este modelo o schema a las clases q
+    //ocupemos lo podemos mandar llamar con el name(linea 13) y ademas tendra la funcionalidad  de useFactory que podemos meter logica ahí. ejemplo linea 15 "user.service.ts"

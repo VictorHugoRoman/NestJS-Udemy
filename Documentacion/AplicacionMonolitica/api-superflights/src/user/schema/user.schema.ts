@@ -10,5 +10,5 @@ export const UserSchema = new mongoose.Schema(
     { timestamps: true }
 );
 ////creamos indices como sql 
-//UserSchema.index({ username: 1 }); //indice por username
-//UserSchema.index({ email: 1 }); ////indice por email
+UserSchema.index({ username: 1 }); //indice por username
+UserSchema.index({ email: 1 }); ////indice por email
