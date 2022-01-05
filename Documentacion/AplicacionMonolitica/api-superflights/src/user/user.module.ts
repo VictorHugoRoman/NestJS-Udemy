@@ -10,7 +10,7 @@ import { ConfigModule } from '@nestjs/config';
     imports: [ 
         MongooseModule.forFeatureAsync([ //registra hooks antes del registro del modelo, c tiene q usar un proveedor de fábrica o (useFactory) hay de terceros en s t caso usamos d nest
             {
-                name: USER.name, //
+                name: USER.name, //nombre para st schema o modelo
                 imports: [ConfigModule],
                 useFactory: () => {
                     //podemos hacer hookconst schema = UserSchema; 

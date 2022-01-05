@@ -1,34 +1,7 @@
- --Seccion 8-- CREACION DE APLICACION MONOLITICA
-	1 crear aplicacion "nest new api-superflights"
-		decidí usar yarn "npm install --global yarn"
-	2 crear nuestro filtro global de excepciones
-		2.1 carpeta "src" crear carpetas "common" > "filters"
-			crear el archivo http-exception.filter.ts
-		2.2 Asignar la clase AllExceptionFilter recien creada  globalmente para todas las expeciones de las request.
-			ir al "main.ts" y uasr useGlobalFilters()
-	3 crear nuestro interceptor global de tiempo de espera de 2 minutos
-		3.1 en carpeta "src>common" crear carpeta "interceptors" y el archivo timeout.interceptor.ts
-		3.2 Asignar la clase TimeOutInterceptor recien creada de manera global para todas las request.
-			ir al "main.ts" y usar useGlobalInterceptors()
- 
- --Seccion 9-- CONFIGURACION DE BASE DE DATOS MONGO_DB
-	1 Instalar los sig paquetes en modo desarollo
-		yarn add -D mongoose
-		yarn add -D mongoose-autopopulate
-		yarn add -D @nestjs/mongoose
-		yarn add -D @nestjs/config  -->nos sirve para cargar variables de entorno por modulos
-	2 Instalar Docker, bajar la imagen "mongo" e instalar el software de MongoDB Compass para obtener la cadena de conexion.
-	3 Conexion a Mongo
-		3.1 crear el archivo en la raíz del proyecto para las variables de entorno ".env.development" en modo desarrollo.
-			aqui ingresamos la cadena de conexion para la bd mongo. 
-			la tomé del software MongoDBCompass.
-		3.2 ir al archivo "app.module.ts" para agregar nuestra configuracion a la BD Mongo.
-			la configuracion será en el "imports" mediante las clases:
-			"ConfigModule" del paquete instalado "nestjs/config" 
-			"MongooseModule" del paquete instalado "nestjs/mongoose"
- 
- --Seccion 10-- MODULOS DE USUARIOS
-	Estructura de Modulo, Crearemos la estructura de nuestro modelo de usuarios, en el postMan se creará la coleccion "api-superflights > users"
+ --Seccion 10-- MODULO DE PASAJEROS
+	Estructura de Modulo, Crearemos la estructura de nuestro modelo de Pasajeros, en el postMan se creará la coleccion "api-superflights > pasajeros"
+
+	//empezar a ver el video 38
 
 	1 Crear el modulo de usuario
 		1.1 comando "nest g mo user" , crea el modulo de usuario(user) el "user.module.ts" para nuestra entidad, 
