@@ -1,14 +1,11 @@
 import * as mongoose from 'mongoose';
 
-export const UserSchema = new mongoose.Schema(
-    {
+export const UserSchema = new mongoose.Schema({  
+        username: { type: String, unique: true, required: true },
+        email: { type: String, unique: true, required: true },
         name: { type: String, required: true },
-        username: { type: String, required: true, unique: true },
-        email: { type: String, required: true, unique: true },
         password: { type: String, required: true }
-    },
-    { timestamps: true }
-);
-////creamos indices como sql 
-UserSchema.index({ username: 1 }); //indice por username
-UserSchema.index({ email: 1 }); ////indice por email
+});
+
+UserSchema.index({ username: 1  }); //indice por username significa q solo puede exisite uno
+UserSchema.index({ email: 1 }); ////indice por email, significa q solo puiede existir uno

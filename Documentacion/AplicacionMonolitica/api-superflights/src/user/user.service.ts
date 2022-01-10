@@ -11,6 +11,9 @@ import { awaitExpression } from '@babel/types';
 @Injectable()
 export class UserService
 {  
+    //@InjectModel(USER.name) decorador, l decimos a mongoose q tome el schema(modelo) usuarios para q lo inyecte, mongoose lo conoce porque lo importamos en user.module.ts en la clase MongooseModule.
+    //private readonly model: Model<IUser> craemos la variable "model" que accedera a los metodos de BD de mongoose, le decimos q los tipos serán de IPassenger.
+    //Inyectamos el schema(user.schema.ts) configurado para esta entidad y q los tipos para los valores sean de tipo IUser
     constructor(@InjectModel(USER.name) private readonly userModel: Model<IUser>) { }  
     
     async create(userDTO: UserDTO): Promise<IUser>
