@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { PassengerModule } from './passenger/passenger.module';
+import { FlightModule } from './flight/flight.module';
 
 @Module({
     imports: [
@@ -20,7 +21,7 @@ import { PassengerModule } from './passenger/passenger.module';
                 //family: 4 // Use IPv4, skip trying IPv6
             }
         ),//config conexion a mongo
-        UserModule, PassengerModule, 
+        UserModule, PassengerModule, FlightModule, 
     ],
   controllers: [AppController],
   providers: [AppService],
@@ -28,7 +29,7 @@ import { PassengerModule } from './passenger/passenger.module';
 export class AppModule {}
 //OPCIONES EN CADENA DE CONECCION
 //useNewUrlParser, useUnifiedTopology, useFindAndModify y useCreateIndex ya no son opciones compatibles.Mongoose 6 siempre se comporta como si useNewUrlParser,
-//useUnifiedTopology y useCreateIndex fueran verdaderos y useFindAndModify fuera falso.Elimine estas opciones de su código.
+//useUnifiedTopology y useCreateIndex fueran verdaderos y useFindAndModify fuera falso.Elimine estas opciones de su cï¿½digo.
 // La version q manejo solo tiene las sig opciones
 //uri ?: string; //retryAttempts ?: number; //retryDelay ?: number; //connectionName ?: string; //connectionFactory ?: (connection: any, name: string) => any;
 //https://github.com/Automattic/mongoose/blob/master/CHANGELOG.md

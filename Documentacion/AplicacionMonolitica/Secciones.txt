@@ -1,6 +1,6 @@
  --Seccion 8-- CREACION DE APLICACION MONOLITICA
 	1 crear aplicacion "nest new api-superflights"
-		decidí usar yarn "npm install --global yarn"
+		1.1 decidí usar yarn "npm install --global yarn"
 	2 crear nuestro filtro global de excepciones
 		2.1 carpeta "src" crear carpetas "common" > "filters"
 			crear el archivo http-exception.filter.ts
@@ -33,8 +33,8 @@
 	1 Crear el modulo de usuario
 		1.1 comando "nest g mo user" , crea el modulo de usuario(user) el "user.module.ts" para nuestra entidad, 
 			crea la carpeta "user", tambien lo importa en el "app.module".
-		1.2 comando "nest g co user", crea el controller en nuestro modelo user, hace el import solo en nuestro "user.module".
-		1.3 comando "nest g s user", crea el servicio en nuestro modelo user, hace el import solo en nuestro "user.module".  
+		1.2 comando "nest g co user", crea el controller en nuestro modulo user, hace el import solo en nuestro "user.module".
+		1.3 comando "nest g s user", crea el servicio en nuestro modulo user, hace el import solo en nuestro "user.module".  
 	2 crear la interface de nuestra entidad user.
 		en common > interfaces > user.interface.ts
 	3 crear la clase DTO de nuestra entidad user. Los DTOs se usan para la validacion de los datos q entran a nuestra aplicacion, es decir, en los endpoints.
@@ -51,7 +51,7 @@
 	2 Crear los modelos, simplemente programamos las constantes con los nombres de los modelos o entidades.
 		2.1 crear carpeta "models" y adentro "models.ts" todo eso adentro de "common".
 	3 Exportar al module de user el schema creado en el paso 1.
-		en el imports usamos MongooseModule.forFeatureAsyncen q importara user.schema.ts
+		en el imports usamos MongooseModule.forFeatureAsync q importara user.schema.ts
 
 	endPoint Crear Usuarios (POST)
 	1 ir al controlador de "user.controller.ts", le configuramos la url 'api/v1/user' con el decorador @Controller

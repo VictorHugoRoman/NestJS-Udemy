@@ -1,0 +1,58 @@
+ --Seccion 12-- MODULO DE VUELOS
+	Estructura de Modulo, Crearemos la estructura de nuestro modelo de Vuelos, en el postMan se creará la coleccion "api-superflights > vuelos".
+	
+	1 Crear el modulo de vuelos
+		1.1 comando "nest g mo flight", crea el modulo de pasajeros(flight) el "flight.module.ts" para nuestra entidad, 
+			crea la carpeta "flight", tambien lo importa en el "app.module".
+		1.2 comando "nest g co flight", crea el controller en nuestro modulo flight, hace el import solo en nuestro "flight.module".
+		1.3 comando "nest g s flight", crea el servicio en nuestro modulo flight, hace el import solo en nuestro "flight.module".  
+	2 crear la interface de nuestra entidad flight.
+		en common > interfaces > flight.interface.ts
+	3 crear la clase DTO correspondiente a nuestra entidad flight. Los DTOs se usan para la validacion de los datos q entran a nuestra aplicacion, es decir, en los endpoints.
+		en flight > dto > flight.dto.ts
+		3.1 Agregar las restricciones a las propiedades de los paquete "class-validator", "class-transformer" en "flight.dto.ts".
+	4 Tocaría hacer la configuracion global de las validaciones creadas en el paso 3.1 en el "main.ts" y usar useGlobalPipes(), pero ya esta configurado desde la seccion 10.
+	
+	Esquema y Modelo, Crearemos nuestro schema de Passenger utilizando mongoose.
+		Estos schemas se usan en la capa de datos de nuestra aplicacion.
+	1 Crear la carpeta "flight > schema" y crear el archivo "flight.schema.ts".
+	2 Crear los modelos d esta entidad o modulo, simplemente programamos las constantes con los nombres de los modelos o entidades.
+		2.1 Ir a la carpeta "common > models" y n "models.ts" crear la constante.
+			son simplemente refrencias de los modelos q tendriamos disponibles en nuestra aplicacion.
+	3 Exportar al module de flight(flight.module), el schema creado en el paso 1
+		en el imports del @module({}), usamos MongooseModule.forFeatureAsync q importara flight.schema.ts
+	4 Importar el modulo de pasajeros "passenger.module.ts" ya que estamos usando 'mogoose-autopopulate' y este plugin consultara automaticamente la relacion flight.idpassenger
+
+	endPoint Crear Flights (POST)
+	1 ir al controlador de "flight.controller.ts", le configuramos la url 'api/v1/flight' en el decorador @Controller()
+		1.1 crear el constructor para importar el servicio que corresponde a este controller q seria "flight.service.ts"
+	2 crear el metodo "create" de tipo Post en "flight.controller", recibira como parametro el Passenger
+	3 ir al service de "flight.controller.ts" y creamos el constructor para agregar el modelo correspondiente a esta entidad.		
+	4 crear el servicio "create en "flight.service.ts", recibira como parametro el flight.
+	5 en el "app.module" le cambié el objeto de configuracion a la conexion de mongoDB en el import "MongooseModule.forRoot"
+		ya q no me respetaba los unique de los schemas.
+		
+
+	endPoint Obtener Pasajeros (GET)
+	1 Crear el metodo "findAll()" de tipo get en el "flight.controller".
+	2 Crear el servicio "findAll()" q retornara los pasajeros en el "flight.service".
+	3 probar el endpoint GET localhost:3000/api/v1/flight
+	
+	endPoint Obtener Pasajeros por Id (GET), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url
+	1 Crear el metodo "findOne(id)" de tipo get q recibira un parametro en el "flight.controller"
+	2 Crear el metodo "findOne(id)" q recibira un parametro y q retornara el pasajero encontrado en el "flight.service"
+	3 probar el endpoint GET localhost:3000/api/v1/flight/id
+
+	endPoint Actualizar Pasajero  (PUT), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url y el decorador 
+		de parametros "@Body" para obtener el objeto de tipo flight por el request.body.
+	1 Crear el metodo "update(id)" de tipo Put q recibira por parametro el id y por el body los datos a actualizar en el "flight.controller"
+	2 Crear el metodo "update(id)" q recibira el id y un objeto de tipo flight con los datos a actualizar y q retornara el Pasajero actualizado en el "flight.service"
+	3 probar el endpoint PUT localhost:3000/api/v1/flight/id
+
+	endPoint Eliminar Pasajero (DELETE), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url.
+	1 Crear el metodo "delete(id)" de tipo Delete q recibira por parametro el id del flight en el archivo "flight.controller".
+	2 Crear el metodo "delete(id)" q recibira el id del Pasajero y q retornara un objeto con httpStatus Ok y mensaje 'Deleted' en el archivo "flight.service".
+	3 probar el endpoint DELETE localhost:3000/api/v1/flight/id
+	
+	endpoint Agregar pasajeros al Vuelo
+	empezar video 52

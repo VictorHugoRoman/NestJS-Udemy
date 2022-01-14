@@ -38,7 +38,7 @@ export class UserService
     {
         const hash = await this.hashPassword(userDTO.password);
         const user = { ...userDTO, password: hash };
-        return await this.userModel.findByIdAndUpdate(id, user, { new: true });
+        return await this.userModel.findByIdAndUpdate(id, user, { new: true });//con new = true le decimos a mongoose q retorne al objeto despues de la actualizacion
     }
 
     async delete(id: string)

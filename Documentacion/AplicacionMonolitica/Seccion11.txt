@@ -1,11 +1,11 @@
- --Seccion 10-- MODULO DE PASAJEROS
-	Estructura de Modulo, Crearemos la estructura de nuestro modelo de Pasajeros, en el postMan se creará la coleccion "api-superflights > pasajeros".
+ --Seccion 11-- MODULO DE PASAJEROS
+	Estructura de Modulo, Crearemos la estructura de nuestro modelo de Pasajeros, en el postMan se creará la coleccion "api-superflights > passenger".
 	
 	1 Crear el modulo de pasajeros
 		1.1 comando "nest g mo passenger", crea el modulo de pasajeros(passenger) el "passenger.module.ts" para nuestra entidad, 
 			crea la carpeta "passenger", tambien lo importa en el "app.module".
-		1.2 comando "nest g co passenger", crea el controller en nuestro modelo passenger, hace el import solo en nuestro "passenger.module".
-		1.3 comando "nest g s passenger", crea el servicio en nuestro modelo passenger, hace el import solo en nuestro "passenger.module".  
+		1.2 comando "nest g co passenger", crea el controller en nuestro modulo passenger, hace el import solo en nuestro "passenger.module".
+		1.3 comando "nest g s passenger", crea el servicio en nuestro modulo passenger, hace el import solo en nuestro "passenger.module".  
 	2 crear la interface de nuestra entidad passenger.
 		en common > interfaces > passenger.interface.ts
 	3 crear la clase DTO correspondiente a nuestra entidad passenger. Los DTOs se usan para la validacion de los datos q entran a nuestra aplicacion, es decir, en los endpoints.
@@ -13,7 +13,7 @@
 		3.1 Agregar las restricciones a las propiedades de los paquete "class-validator", "class-transformer" en "passenger.dto.ts".
 	4 Tocaría hacer la configuracion global de las validaciones creadas en el paso 3.1 en el "main.ts" y usar useGlobalPipes(), pero ya esta configurado desde la seccion 10.
 	
-	Esquema y Modelo, Crearemos nuestro schema de usuario utilizando mongoose.
+	Esquema y Modelo, Crearemos nuestro schema de Passenger utilizando mongoose.
 		Estos schemas se usan en la capa de datos de nuestra aplicacion.
 	1 Crear la carpeta "passenger > schema" y crear el archivo "passenger.schema.ts".
 	2 Crear los modelos d esta entidad o modulo, simplemente programamos las constantes con los nombres de los modelos o entidades.
@@ -25,7 +25,7 @@
 	endPoint Crear Pasajeros (POST)
 	1 ir al controlador de "passenger.controller.ts", le configuramos la url 'api/v1/passenger' en el decorador @Controller()
 		1.1 crear el constructor para importar el servicio que corresponde a este controller q seria "passenger.service.ts"
-	2 crear el metodo "create" de tipo Post en "passenger.controller", recibira como parametro el usuario
+	2 crear el metodo "create" de tipo Post en "passenger.controller", recibira como parametro el Passenger
 	3 ir al service de "passenger.controller.ts" y creamos el constructor para agregar el modelo correspondiente a esta entidad.		
 	4 crear el servicio "create en "passenger.service.ts", recibira como parametro el passenger.
 	5 en el "app.module" le cambié el objeto de configuracion a la conexion de mongoDB en el import "MongooseModule.forRoot"
@@ -33,23 +33,23 @@
 	6 En el .env modifique la cadena de conexion
 		
 
-	endPoint Obtener Pasajeros (GET)
+	endPoint Obtener Pasajeros (GET)		
 	1 Crear el metodo "findAll()" de tipo get en el "passenger.controller".
-	2 Crear el servicio "findAll()" q retornara los usuarios en el "passenger.service".
+	2 Crear el servicio "findAll()" q retornara los pasajeros en el "passenger.service".
 	3 probar el endpoint GET localhost:3000/api/v1/passenger
 	
 	endPoint Obtener Pasajeros por Id (GET), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url
 	1 Crear el metodo "findOne(id)" de tipo get q recibira un parametro en el "passenger.controller"
-	2 Crear el metodo "findOne(id)" q recibira un parametro y q retornara el usuario encontrado en el "passenger.service"
+	2 Crear el metodo "findOne(id)" q recibira un parametro y q retornara el pasajero encontrado en el "passenger.service"
 	3 probar el endpoint GET localhost:3000/api/v1/passenger/id
 
-	endPoint Actualizar Usuario  (PUT), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url y el decorador 
-		de parametros "@Body" para obtener el objeto de tipo usuario por el request.body.
+	endPoint Actualizar Pasajero  (PUT), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url y el decorador 
+		de parametros "@Body" para obtener el objeto de tipo passenger por el request.body.
 	1 Crear el metodo "update(id)" de tipo Put q recibira por parametro el id y por el body los datos a actualizar en el "passenger.controller"
-	2 Crear el metodo "update(id)" q recibira el id y un objeto de tipo usuario con los datos a actualizar y q retornara el usuario actualizado en el "passenger.service"
+	2 Crear el metodo "update(id)" q recibira el id y un objeto de tipo passenger con los datos a actualizar y q retornara el Pasajero actualizado en el "passenger.service"
 	3 probar el endpoint PUT localhost:3000/api/v1/passenger/id
 
-	endPoint Eliminar Usuario (DELETE), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url.
-	1 Crear el metodo "delete(id)" de tipo Delete q recibira por parametro el id del usuario en el archivo "passenger.controller".
-	2 Crear el metodo "delete(id)" q recibira el id del usuario y q retornara un objeto con httpStatus Ok y mensaje 'Deleted' en el archivo "passenger.service".
+	endPoint Eliminar Pasajero (DELETE), usaremos el decorador de parametros "@Param" para obtener el valor del parametro por url.
+	1 Crear el metodo "delete(id)" de tipo Delete q recibira por parametro el id del passenger en el archivo "passenger.controller".
+	2 Crear el metodo "delete(id)" q recibira el id del Pasajero y q retornara un objeto con httpStatus Ok y mensaje 'Deleted' en el archivo "passenger.service".
 	3 probar el endpoint DELETE localhost:3000/api/v1/passenger/id

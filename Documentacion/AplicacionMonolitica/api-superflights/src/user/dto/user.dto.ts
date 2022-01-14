@@ -13,3 +13,5 @@ export class UserDTO {
     @IsString()
     readonly password: string;
 }
+
+//Estas clases DTO se usan normalmente en los endpoint para validar los datos de entrada a la aplicacion

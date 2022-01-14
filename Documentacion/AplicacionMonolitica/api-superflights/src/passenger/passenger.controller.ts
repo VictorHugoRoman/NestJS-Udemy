@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Put, Delete } from '@nestjs/common';
 import { PassengerService } from './passenger.service';
 import { create } from 'istanbul-reports';
 import { PassengerDTO } from './dto/passenger.dto';
@@ -12,5 +12,25 @@ export class PassengerController
     create(@Body() passengerDTO: PassengerDTO)
     {
         return this.passengerService.create(passengerDTO);
+    }
+
+    @Get()
+    findAll() {
+        return this.passengerService.findAll();
+    }
+
+    @Get(':id')
+    findOne(@Param('id') id: string) {
+        return this.passengerService.findOne(id);
+    }
+
+    @Put(':id')
+    update(@Param('id') id: string, @Body() passengerDTO: PassengerDTO) {
+        return this.passengerService.update(id, passengerDTO);
+    }
+
+    @Delete(':id')
+    delete(@Param('id') id: string) {
+        return this.passengerService.delete(id);
     }
 }

@@ -4,3 +4,6 @@ export interface IUser extends Document {
     email: string;
     password: string;
 }
+
+
+//Estos tipos de interfaces de entidades de la aplicacion se usan normalmente para el manejo de tipos de entidad.

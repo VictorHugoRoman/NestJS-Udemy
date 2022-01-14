@@ -7,3 +7,5 @@ export class PassengerDTO
     @IsNotEmpty() @IsEmail()
     readonly email: string;
 }
+
+//Estas clases DTO se usan normalmente en los endpoint para validar los datos de entrada a la aplicacion
