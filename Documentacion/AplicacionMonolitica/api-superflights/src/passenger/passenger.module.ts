@@ -19,7 +19,8 @@ import { PassengerSchema } from './schema/passenger.schema';
             },
         }])
     ],
-  controllers: [PassengerController],
-  providers: [PassengerService]
+    controllers: [PassengerController],
+    providers: [PassengerService],
+    exports: [PassengerService]
 })
-export class PassengerModule {}
+export class PassengerModule { }

@@ -54,5 +54,13 @@
 	2 Crear el metodo "delete(id)" q recibira el id del Pasajero y q retornara un objeto con httpStatus Ok y mensaje 'Deleted' en el archivo "flight.service".
 	3 probar el endpoint DELETE localhost:3000/api/v1/flight/id
 	
-	endpoint Agregar pasajeros al Vuelo
-	empezar video 52
+	Agregar pasajeros por vuelo
+	1 Crear el metodo "addPassenger(flightId, passengerId)" en "flight.controller.ts". Recibira el id del pasajero y del vuelo, lo creamos asincrono ya q tenemos q consultar
+		el vuelo y el pasajero.
+		1.1 Exportar el servicio de pasajero "PassengerService", para poder acceder a esta clase desde "flight.controller.ts".
+			1.1.1 en "passenger.module.ts" agregar lo siguente "exports: [PassengerService]" al decorador "@Module".
+		1.2 Agregar el "PassengerService" al metodo "addPassenger()".
+	2 crear el metodo "addPassenger(flightId, passengerId)" en "flight.service.ts" asincrono q retornara una promesa de tipo IFlight.
+
+	Actualizacion de Rutas
+	empezar video 53

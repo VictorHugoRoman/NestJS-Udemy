@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "d914cca8-d304-fffc-9fef-eb1a46010b23",
+		"name": "api-superflights",
+		"description": "aplicacion de nestJs con Udemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Victor Hugo 1\",\r\n    \"username\": \"vickMan2\",\r\n    \"email\": \"vickman@gmail.co\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/user",
+						"description": "crea un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Victor Hugo\",\r\n    \"username\": \"vickMan\",\r\n    \"email\": \"vickman@gmail.co\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/user/61cf514eb318709ebdceed6b",
+						"description": "crea un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/user"
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/user/61cf514eb318709ebdceed6b"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/user/61cf514eb318709ebdceed6b"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "passenger",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"passenger vick 2\",\r\n    \"email\": \"passenger.vick2@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/passenger"
+					},
+					"response": []
+				},
+				{
+					"name": "FindAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/passenger"
+					},
+					"response": []
+				},
+				{
+					"name": "FindOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/passenger/61dda917b119284eb578dde8"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"passenger vick 2 edit\",\r\n    \"email\": \"passenger.vick3edoit@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/passenger/61dda917b119284eb578dde8"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"passenger vick 2 edit\",\r\n    \"email\": \"passenger.vick3edoit@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/passenger/61dcadf5dfe62a722265a466"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "flight",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilot\":\"Pilot Victor\",\r\n    \"airplane\":\"Airbus A300\",\r\n    \"destinationCity\":\"London\",\r\n    \"flightDate\": \"2021-01-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/flight/"
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/flight"
+					},
+					"response": []
+				},
+				{
+					"name": "findOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/flight/61e1f31ed098b8fe48fd591b"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pilot\":\"Pilot Victor Hugo\",\r\n    \"airplane\":\"Airbus A300\",\r\n    \"destinationCity\":\"London\",\r\n    \"flightDate\": \"2021-01-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/flight/61e1f46cd098b8fe48fd592b"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Passenger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{endpoint}}/api/v1/flight/61e1f46cd098b8fe48fd592b/passenger/622659bf85d71258e93f8821"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{endpoint}}/api/v1/flight/61e1d7584f5379bfef7540b6"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
