@@ -62,5 +62,28 @@
 		1.2 Agregar el "PassengerService" al metodo "addPassenger()".
 	2 crear el metodo "addPassenger(flightId, passengerId)" en "flight.service.ts" asincrono q retornara una promesa de tipo IFlight.
 
-	Actualizacion de Rutas
-	empezar video 53
+	Actualizar los metodos de mostrar todos los vuelos y mostrar por id.
+		haremos q c muestre toda la informacion de los pasajeros que este ligados al vuelo ya q actualmente solo se muestra el id del passenger.
+	1 Ir al metodo de "findAll()" en "flight.service.ts" y le agregamos el metodo pupulate()
+	1 Ir al metodo de "findOne()" en "flight.service.ts" y le agregamos el metodo pupulate()
+	
+	Consumir la api de clima https://www.metaweather.com/api/.
+		vamos a crear 2 request en postMan para  obtener el woeid y el clima.
+	1 En postMan crear una coleccion llamada "api-metaweather"
+	2 En la coleccion "api-metaweather" crear un request "Get woeid"
+	3 En la coleccion "api-metaweather" crear un request "Get Weather"
+
+	Crear las interfaces para los datos de la api "api-metaweather"
+		1 abrir la pagina web https://app.quicktype.io/ para crear interfaces mediante objetos json.
+		2 copiar el resultado del endpoint "Get woeid" para usarlo en la pagina y crear la interfaz "ILocation".
+			2.1 crear el archivo para la interfaz common>interfaces>location.interface.ts.
+		3 copiar el resultado del endpoint "Get Weather" para usarlo en la pagina y crear la interfaz "IWeather".
+			3.1 crear el archivo para la interfaz common>interfaces>weather.location.ts
+			3.2 importar la interfaz de clima(IWeather) en la interfaz de vuelo(IFlight). 
+
+	Obtener Ubicacion y clima
+		1 Instalar las sig dependencias "axios" y "moment"
+			yarn add axios moment
+		2 vamos modificar el metodo "findOne" del servicio de vuelos "flight > flight.service.ts" 
+			2.1 Obtener la ubicacion modificar el metodo "findOne".
+			2.2 Obtener el clima modificar el metodo "findOne".
